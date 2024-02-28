@@ -1,101 +1,61 @@
 <!-- 
     ✅ Temas a tocar:
 
-    - v-if, v-else, v-else-if   ✅
-    - v-model                   ✅
-	- v-for                     
-	- @submit, @submit.prevent  ✅
+    - Componentes                  ✅
+		- Props                    .
+		- Emits                    ✅
+	- v-for                        .
 -->
 <script setup>
 	import { ref } from "vue";
-
-	const email = ref();
-	const password = ref();
-	console.log(email.value, password.value);
+	import LoginPage from "./pages/LoginPage.vue";
+	import Navbar from "./components/NavBar.vue";
 
 	const isLoginShow = ref(true);
 	const pageShow = ref("about-us");
 
-	function login() {
-		// console.log(email.value, password.value);
-
-		// Simulando backend
-		if (
-			email.value === "micorreo@gmail.com" &&
-			password.value === "123456"
-		) {
-			isLoginShow.value = false;
-			console.log("Login exitoso");
-		} else {
-			alert("Credenciales incorrectas");
-		}
+	function changePage(page){
+		pageShow.value = page;
 	}
 </script>
 
 <template>
-	<!-- LOGIN -->
-	<div
-		v-if="isLoginShow === true"
-		class="w-[400px] my-[50px] mx-auto bg-[#c6c6c6] block rounded-[30px]"
-	>
-		<h1 class="text-center">Login</h1>
-
-		<form @submit.prevent="login()" class="block p-[20px]">
-			<div class="grid justify-center">
-				<label for="email">Email</label>
-				<input v-model="email" type="text" name="email" id="email" />
-			</div>
-
-			<div class="grid justify-center">
-				<label for="password">Password</label>
-				<input
-					v-model="password"
-					type="text"
-					name="password"
-					id="password"
-				/>
-			</div>
-			<br />
-			<!-- Momentaneos -->
-			<div class="flex justify-center">
-				<button type="submit" class="bg-green-500 p-2 rounded-xl">
-					Login
-				</button>
-			</div>
-		</form>
-	</div>
+	<LoginPage @hide-login="isLoginShow=false" v-if="isLoginShow == true"/>
 	<!-- APP -->
 	<div v-else class="">
-		
-		<nav class="flex bg-[#ccc] justify-between w-[100%] p-3">
-			<h2>MyBookApp</h2>
-			<div class="">
-				<span
-					class="m-4 hover:text-white"
-					@click="pageShow = 'about-us'"
-					>Acerda de nosotros</span
-				>
-				<span class="m-4 hover:text-white" @click="pageShow = 'explore'"
-					>Explorar</span
-				>
-				<span class="m-4 hover:text-white" @click="pageShow = 'reviews'"
-					>Reseñas</span
-				>
-				<span class="m-4 hover:text-white" @click="isLoginShow = true"
-					>Salir</span
-				>
-			</div>
-		</nav>
-		<!-- Acerca de nosotros  -->
-		<section v-if="pageShow === 'about-us'">
-			<h2>Acerca de nosotros</h2>
+		<Navbar @change-page="changePage" @hide-login="isLoginShow = true"/>
+
+		<section v-if="pageShow == 'about-us'" class="max-w-[700px] m-auto">
+			<img class="min-w-[100%]" src="../public/libros.jpg" alt="IMG_Libros"/>
+			<h2 class="font-bold text-2xl text-center">Acerca de nosotros</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+				aliquam molestiae nulla inventore minima dignissimos eius vitae.
+				Nulla cum eaque commodi animi, assumenda a perferendis iste
+				architecto, sequi quo molestiae aut! Perferendis eveniet tenetur
+				porro error autem qui in, sint ducimus? Maxime ipsam ipsum est
+				repellendus harum, nam quae possimus voluptatem vero, temporibus
+				iure fuga autem. Maiores molestias porro excepturi praesentium
+				nihil repellat similique voluptatem exercitationem! Deleniti
+				itaque, quo explicabo deserunt repudiandae ipsam hic tempora
+				quibusdam neque beatae eligendi non animi est facere recusandae
+				corporis fugit reprehenderit. Maxime nesciunt repudiandae
+				mollitia ut, minus illo suscipit voluptates consequuntur
+				repellendus, nulla possimus dolorem magnam. Quod earum, amet,
+				placeat dolor voluptatibus alias vero iusto porro explicabo rem
+				quos eum? Fugiat esse blanditiis animi doloribus ratione quia
+				commodi dolorem asperiores sapiente optio adipisci distinctio
+				possimus, nam explicabo vitae et quos ducimus? Odit earum quasi
+				iusto? Soluta quidem iusto, vel tempore aut maiores accusantium
+				magnam.
+			</p>
 		</section>
 		<!-- Explorar -->
-		<section v-else-if="pageShow === 'explore'">
+		<section v-else-if="pageShow == 'explore'">
 			<h2>Explorar</h2>
 		</section>
 		<!-- Reseñas -->
-		<section v-else-if="pageShow === 'reviews'">
+		<section v-else-if="pageShow == 'reviews'">
 			<h2>Reseñas</h2>
 		</section>
 	</div>
