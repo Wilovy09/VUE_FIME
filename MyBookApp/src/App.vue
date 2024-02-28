@@ -34,10 +34,13 @@
 
 <template>
 	<!-- LOGIN -->
-	<div v-if="isLoginShow === true" class="login-container">
-		<h1>Login</h1>
+	<div
+		v-if="isLoginShow === true"
+		class="max-w-[400] my-[50px] mx-auto bg-[#c6c6c6] block rounded-[30px]"
+	>
+		<h1 class="text-center">Login</h1>
 
-		<form @submit.prevent="login()">
+		<form @submit.prevent="login()" class="block p-[20px]">
 			<div class="">
 				<label for="email">Email</label>
 				<br />
@@ -58,7 +61,9 @@
 			</div>
 			<br />
 			<!-- Momentaneos -->
-			<button type="submit">Login</button>
+			<div class="flex justify-center">
+				<button type="submit" class="bg-green-500 p-2 rounded-xl">Login</button>
+			</div>
 		</form>
 	</div>
 	<!-- APP -->
@@ -88,21 +93,7 @@
 </template>
 
 <style scoped>
-	.login-container {
-		width: 400px;
-		margin: 50px auto;
-		background-color: rgb(198, 198, 198);
-		padding-block: 30px;
-		border-radius: 30px;
 
-		& h1 {
-			text-align: center;
-		}
-		& form {
-			display: block;
-			padding: 20px;
-		}
-	}
 	/* NAVBAR */
 	nav {
 		display: flex;
