@@ -1,5 +1,7 @@
 # Vue.js en FIME
 
+**PNPM** en vez de **npm**
+
 **Profesor:** Alejandro Sauqué Pérez
 
 ## **DevZone Enero-Junio 2024**
