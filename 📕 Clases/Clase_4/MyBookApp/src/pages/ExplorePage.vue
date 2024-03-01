@@ -20,7 +20,7 @@
 <template>
     <h2 class="text-3xl font-bold text-center mt-4">Explorar libros</h2>
     <section class="flex justify-center mt-4">
-        <section class="grid xl:grid-cols-2 gap-4">
+        <section class="grid gap-4">
             <section v-for="b in books">
                 <Card :book="b"/>
             </section>

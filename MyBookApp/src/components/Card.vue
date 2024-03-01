@@ -3,19 +3,18 @@ defineProps(["book"]);
 </script>
 
 <template>
-    <section class="flex min-w-[700px] rounded-xl bg-[#949494]">
-        <div class="">
-            <img class="rounded-l-xl" :src="book.image" alt="IMG">
+    <section class="flex w-[650px] max-h-[20rem] bg-white duration-150 hover:scale-[102%] hover:shadow-md">
+        <div class="min-w-[40%]">
+            <img class="h-full" :src="book.image" :alt="book.title">
         </div>
-        <div class="ml-4">
-            <h3 class="text-xl font-semibold">Titulo</h3>
-            <p>{{ book.title }}</p>
+        <div class="p-2">
+            <h3 class="font-bold text-gray-800 text-2xl">{{ book.title }}</h3>
             <span v-if="book.subtitle">
-                <h3 class="text-xl font-semibold">Subtitulo</h3>
-                <p>{{ book.subtitle }}</p>
+                <p class="font-bold text-gray-600 text-xl">{{ book.subtitle }}</p>
             </span>
-            <h3 class="text-xl font-semibold">Autores</h3>
-            <p>{{ book.authors }}</p>
+            <div class="">
+                <p class="font-bold text-gray-500">{{ book.authors }}</p>
+            </div>
         </div>
     </section>
 </template> 

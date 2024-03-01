@@ -13,7 +13,7 @@
 	import ExplorePage from "./pages/ExplorePage.vue";
 	import ReviewsPage from "./pages/ReviewsPage.vue";
 
-	const isLoginShow = ref(false);
+	const isLoginShow = ref(true);
 	const pageShow = ref("about-us");
 
 	function changePage(page){
