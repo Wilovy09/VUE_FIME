@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav class="flex bg-[#949494] justify-between w-[100%] p-3">
+    <nav class="flex bg-[#cccccc] justify-between w-[100%] p-3 drop-shadow-xl">
         <h2>MyBookApp</h2>
         <div class="">
             <span class="m-4 hover:text-white" @click="emits('changePage', 'about-us')">Acerda de nosotros</span>

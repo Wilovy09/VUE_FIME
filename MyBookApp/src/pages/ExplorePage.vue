@@ -23,9 +23,9 @@
 
         <h2 class="text-3xl font-bold text-center mt-4">Explorar libros</h2>
         <section class="flex justify-center mt-4">
-            <section class="grid xl:grid-cols-2 gap-4">
+            <section class="sm:columns-2 md:columns-2 lg:columns-1 xl:columns-2 gap-4">
 
-                <section v-for="b in books">
+                <section v-for="b in books" class="mt-4 first-of-type:mt-0">
                     <Card :book="b" @click="selectedBookId = b.id; console.log(selectedBookId)"/>
                 </section>
             
