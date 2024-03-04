@@ -1,7 +1,3 @@
-<!-- 
-    ✅ Temas a tocar:
-    - TODO: Detalle de libro
--->
 <script setup>
 	import { ref } from "vue";
 	import Navbar from "./components/NavBar.vue";
