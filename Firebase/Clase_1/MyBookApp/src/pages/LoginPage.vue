@@ -11,7 +11,6 @@
 		try{
 			await signInWithEmailAndPassword(auth, email.value, password.value);
 			emits('hideLogin');
-			alert('Iniciando sesion')
 		} catch (e) {
 			console.log(e.message)
 		}
